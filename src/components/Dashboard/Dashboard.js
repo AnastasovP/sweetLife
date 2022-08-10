@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, } from 'react-router-dom';
+
 import * as recipeService from '../../services/recipeService';
 import RecipeList from './RecipeList/RecipeList';
 import Contacts from '../Contacts/Contacts'
 import About from '../About/About';
 import OurProducts from '../OurProducts/OurProducts';
 import NotFound from '../404/NotFound';
-//import logo from '../../logo.svg';
-//<img src={logo} title="asdasd" alt="asdasd" /> - for logo before the last </section>
+
 const Dashboard = () => {
 
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        recipeService.getAll() // what about the Object.values(), see 30min
+        recipeService.getAll() 
             .then(result => {
                 setRecipes(result);
             })

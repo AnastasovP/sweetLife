@@ -1,22 +1,34 @@
 import { useNavigate, Link } from 'react-router-dom';
+
+import { useNotificationContext } from '../../contexts/NotificationContext';
+
 import * as authService from '../../services/authService';
+
 import { useAuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
     const navigate = useNavigate();
     const { login } = useAuthContext();
+    const { addNotification } = useNotificationContext();
 
     const registerSubmitHandler = (e) => {
         e.preventDefault();
-        let { email, password } = Object.fromEntries(new FormData(e.currentTarget));
+        let { email, password, confirmPass } = Object.fromEntries(new FormData(e.currentTarget));
+        if (password !== confirmPass) {
+            addNotification('Passwords don\'t match!');
+            return;
+        }
         authService.register(email, password)
-            .then(authData => { // this is the response actually, we can name it as we wish
+            .then(authData => {
                 login(authData);
                 navigate('/');
             })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
-    
+
     return (
         <section id="register-page" className="register">
             <form id="register-form" method="POST" onSubmit={registerSubmitHandler}>
@@ -37,7 +49,7 @@ const Register = () => {
                     <p className="field">
                         <label htmlFor="repeat-pass">Repeat Password</label>
                         <span className="input">
-                            <input type="password" name="confirm-pass" id="repeat-pass" placeholder="Repeat Password" />
+                            <input type="password" name="confirmPass" id="repeat-pass" placeholder="Repeat Password" />
                         </span>
                     </p>
                     <input className="button submit" type="submit" value="Register" />
@@ -48,6 +60,6 @@ const Register = () => {
             </form>
         </section>
     );
-    
+
 }
 export default Register;

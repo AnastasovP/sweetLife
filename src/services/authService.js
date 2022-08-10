@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:3030'
 
-export const login = async (email, password) => { // in this situation async is better!!!!!
-    let res = await fetch(`${baseUrl}/users/login`, { // do not forget to return!!!
+export const login = async (email, password) => { 
+    let res = await fetch(`${baseUrl}/users/login`, { 
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -13,7 +13,7 @@ export const login = async (email, password) => { // in this situation async is 
     if (res.ok) {
         return jsonResult
     } else {
-        throw jsonResult.message; // if we are not interested in the code, but only in the message
+        throw jsonResult.message; // not interested in the code, but only in the message
     }
 }
 

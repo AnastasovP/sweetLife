@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+
 import * as recipeService from '../../services/recipeService';
 import * as likeService from '../../services/likeService';
+
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useNotificationContext, types } from '../../contexts/NotificationContext';
+
 import ConfirmDialog from '../Common/ConfirmDialog/ConfirmDialog';
+
 import useRecipeState from '../../hooks/useRecipeState';
 
 const Details = () => {
@@ -19,6 +23,9 @@ const Details = () => {
         likeService.getRecipeLikes(recipeId)
             .then(likes => {
                 setRecipe(state => ({ ...state, likes }))
+            })
+            .catch(err => {
+                console.log(err) 
             })
     }, [recipeId, setRecipe]);
 

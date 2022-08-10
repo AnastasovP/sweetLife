@@ -1,11 +1,11 @@
 import * as request from './requester';
 
-const baseUrl = 'http://localhost:3030/data'; // without jsonstore otherwise no ownerId!!!!!!!!!!!
+const baseUrl = 'http://localhost:3030/data'; 
 
 export const getAll = async () => {
-    let response = await request.get(`${baseUrl}/recipes?sortBy=_createdOn%20desc`) //pets?sortBy=_createdOn%20desc
+    let response = await request.get(`${baseUrl}/recipes?sortBy=_createdOn%20desc`) //to take the last ones
 
-    let result = Object.values(response); // do not forget to return the values!!!!!
+    let result = Object.values(response); 
 
     return result;
 };
@@ -15,7 +15,7 @@ export const getMyRecipes = (ownerId) => {
     return request.get(`${baseUrl}/recipes?where=${query}`)
 };
 
-export const create = async (recipeData, token) => { // token here is not good, only temporary solution
+export const create = async (recipeData, token) => { 
     let response = await fetch(`${baseUrl}/recipes`, {
         method: 'POST',
         headers: {

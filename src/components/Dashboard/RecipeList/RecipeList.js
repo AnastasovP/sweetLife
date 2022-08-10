@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import RecipeCard from '../RecipeCard/RecipeCard'
 
 
@@ -12,7 +13,7 @@ const RecipeList = ({
                 ? <ul className="other-recipes-list">
                     {recipes.map(x => <RecipeCard key={x._id} recipe={x} />)}
                 </ul>
-                : <p className="no-recipes">No recipes in database! <a href="/create">Create the first one</a></p>
+                : <p className="no-recipes">No recipes in database! <Link to="/create">Create the first one</Link></p>
             }
 
         </>

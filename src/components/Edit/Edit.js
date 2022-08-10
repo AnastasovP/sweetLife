@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
 import useRecipeState from '../../hooks/useRecipeState';
+
 import * as recipeService from '../../services/recipeService';
 
 const categories = [
@@ -31,7 +33,7 @@ const Edit = () => {
         navigate(`/details/${recipeId}`)
 
     }
-    // for validation, the best is to create an EditHelper.js if I have time
+    // for validation, the best is to create an EditHelper.js if enough time
     const nameChangeHandler = (e) => {
         let currentName = e.target.value;
         if (currentName.length < 3) {

@@ -1,6 +1,9 @@
 import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
 import * as recipeService from '../../services/recipeService';
+
 import { useAuthContext } from '../../contexts/AuthContext';
 
 const Create = () => {
@@ -51,12 +54,12 @@ const Create = () => {
             imageUrl,
             category,
             ingredients
-        }, user.accessToken) // to take the token from user
+        }, user.accessToken) 
             .then(result => {
                 navigate('/')
             })
             .catch(err => {
-                console.log(err) // should catch every service
+                console.log(err) 
             })
     }
 

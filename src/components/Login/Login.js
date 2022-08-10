@@ -1,9 +1,14 @@
-import { useNavigate, Link } from 'react-router-dom'; // the new history
+import { useNavigate, Link } from 'react-router-dom'; 
+
+import { useNotificationContext } from '../../contexts/NotificationContext';
+
 import { useAuthContext } from '../../contexts/AuthContext';
+
 import * as authService from '../../services/authService';
 const Login = () => { // no props anymore, only hooks
     const { login } = useAuthContext();
     const navigate = useNavigate();
+    const { addNotification } = useNotificationContext();
 
     const onLoginHandler = (e) => {
         e.preventDefault();
@@ -16,7 +21,7 @@ const Login = () => { // no props anymore, only hooks
                 navigate('/') // instead of history.push('/')
             })
             .catch(err => {
-                //TODO show notification
+                addNotification('Username or password don\'t match!')
                 console.log(err)
             })
 
