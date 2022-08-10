@@ -1,3 +1,29 @@
+
+The project is designed as a bakery shop for different kind of sweets, facilitating the needs of browsing guest users, as well as logged in users.
+
+Public part:
+The guest users without authentication have access to the main dashboard in order to see the recipes of registered users, including the details of a recipe, and received likes, about page, contact page, and our products page. If a guest user would like to be able to create a recipe, has access to the page with wis own recipes, or like other users recipes he has to register.
+
+Private part:
+The logged in users have full access to everything in the application. They are awolled to share recipes with other users, delete or edit their own recipes, and to like other registered users recipes - only one like per recipe.
+
+Technologies Used:
+    - React
+    - React-Bootstrap
+    - SoftUni Practice Server
+    - CSS
+    - HTML
+
+Features
+
+    - Contains 16 unique components to display project details
+    - Contains 2 contexts: AuthContext and NotificationContext
+    - Contains 2 hooks 
+    - Contains servises for CRUD operations
+
+    
+
+
 <<<<<<< HEAD
 # Getting Started with Create React App
 
