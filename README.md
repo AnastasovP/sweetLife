@@ -7,7 +7,7 @@ The project is designed as a bakery shop for different kind of sweets, facilitat
 
 The app is created by [Petar Anastasov](https://github.com/AnastasovP) for the purposes of React.js SoftUni course
 
-![View](../cover.PNG)!
+!(../cover.PNG)!
 
 ### Public part:
 The guest users without authentication have access to the main dashboard in order to see the recipes of registered users, including: 
