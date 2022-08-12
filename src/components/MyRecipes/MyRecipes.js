@@ -15,7 +15,10 @@ const MySweets = () => {
         recipeService.getMyRecipes(user._id)
             .then(recipeResult => {
                 setRecipes(recipeResult);
-            });
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }, [user._id]);
 
     return (

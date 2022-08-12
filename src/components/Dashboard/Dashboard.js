@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import * as recipeService from '../../services/recipeService';
 import RecipeList from './RecipeList/RecipeList';
@@ -43,15 +43,15 @@ const Dashboard = () => {
                     
                         <ul>
                             <li>
-                                <a className="button down" href="/about">About us</a>
+                                <Link className="button down" to="/about">About us</Link>
                             </li>
                             <br />
                             <li>
-                            <a className="button down" href="/contacts">Contact us</a>
+                                <Link className="button down" to="/contacts">Contact us</Link>
                             </li>
                             <br />
                             <li>
-                                <a className="button down" href="/our-products">Our Products</a>
+                                <Link className="button down" to="/our-products">Our Products</Link>
                             </li>
                         </ul>
                         

@@ -31,8 +31,8 @@ const Create = () => {
     };
 
     const ingredientsHandler = (e) => {
-        let currentDescription = e.target.value;
-        if (currentDescription.length < 20) {
+        let currentIngredients = e.target.value;
+        if (currentIngredients.length < 20) {
             setErrors(state => ({ ...state, ingredients: 'The ingredients needed should be at least 20 characters long' }))
         } else {
             setErrors(state => ({ ...state, ingredients: null }))

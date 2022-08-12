@@ -76,7 +76,7 @@ const Details = () => {
                         {user._id && (user._id === recipe._ownerId
                             ? <>
                                 <Link className="button" to={`/edit/${recipe._id}`}>Edit</Link>
-                                <a className="button" href="/delete" onClick={deleteClickHandler}>Delete</a>
+                                <Link className="button" to="/delete" onClick={deleteClickHandler}>Delete</Link>
                             </>
                             : <button onClick={likeButtonClick}>Like</button>
                         )}

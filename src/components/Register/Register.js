@@ -2,9 +2,9 @@ import { useNavigate, Link } from 'react-router-dom';
 
 import { useNotificationContext } from '../../contexts/NotificationContext';
 
-import * as authService from '../../services/authService';
-
 import { useAuthContext } from '../../contexts/AuthContext';
+
+import * as authService from '../../services/authService';
 
 const Register = () => {
     const navigate = useNavigate();
